@@ -1,0 +1,5 @@
+import { Monitor, Moon, Sun } from 'lucide-react';
+import { useTheme, type ThemePreference } from '../lib/Theme';
+import { useLocale } from '../lib/Locale';
+import { refinement } from '../data/refinement';
+export function ThemeToggle(){const {preference,setPreference}=useTheme();const {lang}=useLocale();const text=refinement[lang];const Icon=preference==='system'?Monitor:preference==='dark'?Moon:Sun;return <details className="theme-control"><summary aria-label={`${text.theme}: ${text.themeOptions[preference]}`} title={text.theme}><Icon size={18}/></summary><div className="theme-menu" role="radiogroup" aria-label={text.theme}>{(['system','dark','light'] as ThemePreference[]).map(p=><button type="button" role="radio" aria-checked={p===preference} key={p} data-theme-option={p} onClick={e=>{setPreference(p,e.currentTarget);e.currentTarget.closest('details')?.removeAttribute('open');}}>{text.themeOptions[p]}<span aria-hidden="true">{p===preference?'●':'○'}</span></button>)}</div></details>;}

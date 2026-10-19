@@ -1,0 +1,10 @@
+/** Source-level design checks; no claim about rendered layout or browser FPS. */
+import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import postcss from 'postcss';
+const root='src/styles';const tokenCSS=postcss.parse(fs.readFileSync(path.join(root,'tokens.css'),'utf8'));const palettes={dark:{},light:{}};
+for(const node of tokenCSS.nodes){if(node.type!=='rule')continue;const target=node.selector.includes('light')?palettes.light:palettes.dark;for(const decl of node.nodes??[])if(decl.type==='decl')target[decl.prop]=decl.value;}
+palettes.light={...palettes.dark,...palettes.light};
+const luminance=hex=>{const c=hex.slice(1).match(/../g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return .2126*c[0]+.7152*c[1]+.0722*c[2];};const ratio=(a,b)=>{const x=luminance(a),y=luminance(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+for(const [theme,palette]of Object.entries(palettes))for(const [fg,bg,minimum]of [['--text','--bg',4.5],['--text-muted','--bg',4.5],['--text','--surface',4.5],['--text-muted','--surface',4.5],['--accent','--bg',4.5],['--on-accent','--accent',4.5],['--accent-2','--bg',4.5],['--line-strong','--bg',3]]){const score=ratio(palette[fg],palette[bg]);assert.ok(score>=minimum,`${theme} ${fg}/${bg} ${score.toFixed(2)} < ${minimum}`);console.log(`${theme}: ${fg} / ${bg} = ${score.toFixed(2)}:1`);}
+for(const file of fs.readdirSync(root).filter(f=>f.endsWith('.css')&&f!=='tokens.css')){const css=postcss.parse(fs.readFileSync(path.join(root,file),'utf8'));css.walkDecls(d=>{assert.ok(!/#[0-9a-f]{3,8}\b/i.test(d.value),`hardcoded UI colour in ${file}: ${d.value}`);if(d.prop==='font-size'&&/^\d+(?:\.\d+)?px$/.test(d.value))assert.ok(parseFloat(d.value)>=11,`${file} ${d.value}`);});css.walkRules(r=>assert.ok(!/:\s+(?:hover|focus|before|after|not|first)/.test(r.selector),`invalid selector ${r.selector}`));}
+assert.ok(!fs.readFileSync('src/components/ToolMark.tsx','utf8').includes('tool.short'));
+console.log('PASS: semantic colour declarations, explicit pixel font minimum, theme contrast pairs and no monogram rendering.');

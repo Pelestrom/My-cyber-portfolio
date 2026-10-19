@@ -1,0 +1,41 @@
+{
+  "nmap": {
+    "source": "https://nmap.org/images/nmap-logo-64px.svg",
+    "repository": "https://nmap.org/",
+    "license": "Nmap artwork: refer to upstream Nmap trademark and redistribution terms; no affiliation implied.",
+    "asset": "nmap.svg"
+  },
+  "powershell": {
+    "source": "https://raw.githubusercontent.com/PowerShell/PowerShell/master/assets/ps_black_128.svg",
+    "repository": "https://github.com/PowerShell/PowerShell",
+    "license": "Upstream PowerShell assets; see repository LICENSE.txt and Microsoft trademark policy.",
+    "asset": "powershell.svg"
+  },
+  "sigma": {
+    "source": "https://raw.githubusercontent.com/SigmaHQ/sigmahq.github.io/main/public/images/logo_light.svg",
+    "repository": "https://github.com/SigmaHQ/sigma",
+    "license": "Sigma logo: public domain, as stated in upstream Sigma LICENSE.",
+    "asset": "sigma.svg"
+  },
+  "yara": {
+    "source": "https://raw.githubusercontent.com/VirusTotal/yara/master/extra/logo.svg",
+    "repository": "https://github.com/VirusTotal/yara",
+    "license": "Upstream YARA project: BSD-3-Clause; preserve authorship and refer to upstream logo terms.",
+    "asset": "yara.svg",
+    "modification": "Empty outer viewport trimmed; logo paths and colours unchanged."
+  },
+  "chainsaw": {
+    "source": "https://raw.githubusercontent.com/WithSecureOpenSource/chainsaw/master/images/chainsaw.png",
+    "repository": "https://github.com/WithSecureOpenSource/chainsaw",
+    "license": "Artwork from upstream GPL-3.0 repository; see upstream LICENCE.",
+    "asset": "chainsaw.webp",
+    "modification": "Resized and converted to WebP only."
+  },
+  "onion": {
+    "source": "https://avatars.githubusercontent.com/u/8959843?v=4",
+    "repository": "https://github.com/Security-Onion-Solutions",
+    "license": "Official Security Onion Solutions organization artwork; trademark ownership retained.",
+    "asset": "security-onion.webp",
+    "identity": "Official publisher identity (Security Onion Solutions)."
+  }
+}

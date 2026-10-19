@@ -1,0 +1,14 @@
+import { ThemeToggle } from './ThemeToggle';
+import { profile } from '../data/profile';
+import { useEffect, useState } from 'react';
+import { Menu, X, ArrowUpRight, Download } from 'lucide-react';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import { site } from '../data/site';
+import { useLocale } from '../lib/Locale';
+import { useReducedMotion } from '../hooks/useReducedMotion';
+export function Navigation(){
+ const {t,lang,toggle}=useLocale();const [open,setOpen]=useState(false);const [active,setActive]=useState('');const {scrollYProgress}=useScroll();const spring=useSpring(scrollYProgress,{stiffness:150,damping:30});const reduced=useReducedMotion();
+ useEffect(()=>{const obs=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)setActive(entry.target.id);},{rootMargin:'-20% 0px -60% 0px'});for(const id of site.sections){const el=document.getElementById(id);if(el)obs.observe(el);}return()=>obs.disconnect();},[]);
+ useEffect(()=>{function escape(e:KeyboardEvent){if(e.key==='Escape')setOpen(false);}window.addEventListener('keydown',escape);return()=>window.removeEventListener('keydown',escape);},[]);
+ return <><a className="skip-link" href="#main">{t.skip}</a><motion.div className="scroll-progress" style={{scaleX:reduced?scrollYProgress:spring}}/><header className="navigation"><a className="brand" href="#hero" aria-label="Pelestrom"><span className="brand-symbol">P<span>/</span></span>PELESTROM<span className="brand-dot">.</span></a><nav className={open?'nav-links is-open':'nav-links'} id="main-navigation" aria-label={lang==='fr'?'Navigation principale':'Main navigation'}>{[0,1,2,3,4,5].map(i=><a key={site.sections[i]} href={`#${site.sections[i]}`} className={`${active===site.sections[i]?'active':''} ${[0,1,5].includes(i)?'secondary-nav':''}`} onClick={()=>setOpen(false)}>{t.nav[i]}</a>)}<a href="#contact" onClick={()=>setOpen(false)} className="nav-contact">{t.nav[6]}<ArrowUpRight size={14}/></a></nav><div className="nav-actions"><a className="nav-cv icon-button" href={profile.cvUrl} download aria-label={t.cv}><Download size={17}/></a><ThemeToggle/><button className="language-toggle" onClick={toggle} aria-label={t.language}><span className={lang==='fr'?'selected':''}>FR</span><span>/</span><span className={lang==='en'?'selected':''}>EN</span></button><button className="mobile-menu icon-button" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-controls="main-navigation" aria-label={open?t.closeMenu:t.menu}>{open?<X/>:<Menu/>}</button></div></header><nav className="side-nav" aria-label={lang==='fr'?'Sections':'Sections'}>{site.sections.map((id,i)=><a href={`#${id}`} key={id} aria-label={t.nav[i]} aria-current={active===id?'location':undefined} className={active===id?'active':''}><span>{t.nav[i]}</span></a>)}</nav></>;
+}

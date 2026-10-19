@@ -1,0 +1,37 @@
+import type { Lang } from '../types';
+export const i18n = {
+ fr: {
+ nav:['À propos','Compétences','Projets','Certifications','Expériences','Formation','Contact'],
+ skip:'Aller au contenu',menu:'Ouvrir le menu',closeMenu:'Fermer le menu',language:'Passer en anglais',
+ projects:'Voir mes projets',cv:'Télécharger mon CV',scroll:'Explorer',heroMicro:'CYBERDÉFENSE / SÉCURITÉ DE L’INFORMATION',heroRoles:'RED TEAM · BLUE TEAM · DIGITAL FORENSICS',
+ heroQuote:'Tout ce que vous voyez n’est pas forcément',real:'authentique.',heroSignal:'INTERFACE ACTIVE',
+ labels:['À PROPOS','COMPÉTENCES','PROJETS','CERTIFICATIONS','EXPÉRIENCES','FORMATION','CONTACT'],
+ aboutTitle:'Comprendre.\nAnalyser. Défendre.',aboutAside:'Derrière les traces,\nun raisonnement.',aboutSub:'Un parcours technique, une approche fondée sur les preuves.',
+ projectsCount:'projets présentés',certCount:'certifications',degreeCount:'établissements en double diplomation',interests:'Centres d’intérêt',languages:'Langues',
+ skillsTitle:'Une approche\nà plusieurs angles.',skillsSub:'Des outils aux méthodes : les compétences mobilisées dans mes projets.',methods:'Méthodes & pratiques',tools:'Outils & technologies',location:'Casablanca, Maroc',
+ projectsTitle:'Du laboratoire\nà la preuve.',projectsSub:'Quatre projets pour explorer l’attaque, la détection et les traces numériques.',projectIndex:'REGISTRE DES PROJETS',contribution:'Ce que j’ai développé',github:'Voir le dépôt',publication:'Voir la publication',live:'Voir la démo',details:'Explorer le projet',illustration:'Illustration du projet',openImage:'Agrandir le visuel',
+ certTitle:'Des acquis.\nDes preuves.',certSub:'Certifications et formations documentées, avec leurs justificatifs originaux.',certCategories:['Toutes','Red Team','Blue Team','Fondamentaux','Systèmes & formations'],
+ certKinds:{certification:'Certification',completion:'Certificat de formation',attendance:'Attestation de participation'},openCert:'Ouvrir le certificat',copyId:'Copier l’identifiant',expiry:'Valide jusqu’au',
+ expTitle:'Le terrain,\nen complément du lab.',expSub:'Missions professionnelles reprises de mon CV.',bnetdNote:'Deux fonctions au BNETD, présentées séparément comme dans le CV.',
+ eduTitle:'Un parcours\nen cybersécurité.',eduSub:'Double diplomation HESTIM–INSA Hauts-de-France.',
+ contactTitle:'Parlons\ncybersécurité.',contactSub:'Un stage, un projet ou un échange technique ? Retrouvez-moi ici.',email:'Envoyer un email',copyEmail:'Copier l’email',copied:'Copié',copyFailed:'Copie indisponible : sélectionnez le texte.',footer:'Cyberdéfense & Sécurité de l’information',backTop:'Retour en haut',
+ close:'Fermer',zoomIn:'Agrandir',zoomOut:'Réduire',download:'Télécharger le PDF',skipBoot:'Passer l’introduction',loading:'CHARGEMENT',readiness:'DISPONIBLE POUR UN STAGE',
+ forensicTerms:['Métadonnées','Intégrité SHA-256','Analyse ELA','Corrélation de preuves','Verdict explicable'],
+ vulnerabilityTerms:['Criticité','Probabilité d’exploitation','Priorisation'],androidTerms:['Application','HTTP / API','Authentification'],
+ },
+ en: {
+ nav:['About','Skills','Projects','Credentials','Experience','Education','Contact'],skip:'Skip to content',menu:'Open menu',closeMenu:'Close menu',language:'Switch to French',
+ projects:'Explore projects',cv:'Download my CV',scroll:'Explore',heroMicro:'CYBERDEFENCE / INFORMATION SECURITY',heroRoles:'RED TEAM · BLUE TEAM · DIGITAL FORENSICS',
+ heroQuote:'Not everything you see is',real:'real.',heroSignal:'INTERFACE ACTIVE',
+ labels:['ABOUT','SKILLS','PROJECTS','CREDENTIALS','EXPERIENCE','EDUCATION','CONTACT'],
+ aboutTitle:'Understand.\nAnalyse. Defend.',aboutAside:'Behind the traces,\na line of reasoning.',aboutSub:'A technical background. An evidence-driven approach.',projectsCount:'projects presented',certCount:'certifications',degreeCount:'dual degree institutions',interests:'Interests',languages:'Languages',
+ skillsTitle:'One challenge.\nMultiple perspectives.',skillsSub:'From tools to methods: the skills used in my projects.',methods:'Methods & practices',tools:'Tools & technologies',location:'Casablanca, Morocco',
+ projectsTitle:'From the lab\nto the evidence.',projectsSub:'Four projects exploring attacks, detection and digital traces.',projectIndex:'PROJECT REGISTRY',contribution:'What I developed',github:'View repository',publication:'View publication',live:'View demo',details:'Explore project',illustration:'Project illustration',openImage:'Enlarge image',
+ certTitle:'Knowledge.\nEvidence.',certSub:'Documented credentials and training, with their original certificates.',certCategories:['All','Red Team','Blue Team','Foundations','Systems & training'],certKinds:{certification:'Certification',completion:'Training certificate',attendance:'Certificate of attendance'},openCert:'Open certificate',copyId:'Copy credential ID',expiry:'Valid until',
+ expTitle:'In the field.\nBeyond the lab.',expSub:'Professional responsibilities drawn from my CV.',bnetdNote:'Two functions at BNETD, presented separately as in the CV.',
+ eduTitle:'A path into\ncybersecurity.',eduSub:'HESTIM–INSA Hauts-de-France dual degree programme.',
+ contactTitle:'Let’s talk\ncybersecurity.',contactSub:'An internship, a project or a technical conversation? Get in touch.',email:'Send an email',copyEmail:'Copy email',copied:'Copied',copyFailed:'Copy unavailable: select the text.',footer:'Cyberdefence & Information Security',backTop:'Back to top',
+ close:'Close',zoomIn:'Zoom in',zoomOut:'Zoom out',download:'Download PDF',skipBoot:'Skip introduction',loading:'LOADING',readiness:'AVAILABLE FOR AN INTERNSHIP',
+ forensicTerms:['Metadata','SHA-256 integrity','ELA analysis','Evidence correlation','Explainable verdict'],vulnerabilityTerms:['Severity','Exploitation probability','Prioritisation'],androidTerms:['Application','HTTP / API','Authentication'],
+ }
+} satisfies Record<Lang, unknown>;

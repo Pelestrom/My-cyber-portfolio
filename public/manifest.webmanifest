@@ -1,0 +1,13 @@
+{
+  "name": "Pelestrom — Cybersecurity",
+  "short_name": "Pelestrom",
+  "start_url": "./",
+  "display": "browser",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "burpsuite": {
+    "hex": "#FF6633",
+    "source": "https://portswigger.net",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "jsonwebtokens": {
+    "hex": "#000000",
+    "source": "https://jwt.io",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "wireshark": {
+    "hex": "#1679A7",
+    "source": "https://gitlab.com/wanduow/wireshark/-/blob/cd5539b0f76975474869984a9d2f0fce29d5c21e/image/wsicon.svg",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "linux": {
+    "hex": "#FCC624",
+    "source": "https://www.linuxfoundation.org/the-linux-mark/",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "python": {
+    "hex": "#3776AB",
+    "source": "https://www.python.org/community/logos/",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "go": {
+    "hex": "#00ADD8",
+    "source": "https://blog.golang.org/go-brand",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "javascript": {
+    "hex": "#F7DF1E",
+    "source": "https://github.com/voodootikigod/logo.js/blob/1544bdeed6d618a6cfe4f0650d04ab8d9cfa76d9/js.svg",
+    "license": {
+      "type": "MIT",
+      "url": "https://spdx.org/licenses/MIT"
+    }
+  },
+  "typescript": {
+    "hex": "#3178C6",
+    "source": "https://www.typescriptlang.org/branding",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "react": {
+    "hex": "#61DAFB",
+    "source": "https://github.com/facebook/create-react-app/blob/282c03f9525fdf8061ffa1ec50dce89296d916bd/test/fixtures/relative-paths/src/logo.svg",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "git": {
+    "hex": "#F05032",
+    "source": "https://git-scm.com/downloads/logos",
+    "license": {
+      "type": "CC-BY-3.0",
+      "url": "https://spdx.org/licenses/CC-BY-3.0"
+    }
+  },
+  "github": {
+    "hex": "#181717",
+    "source": "https://github.com/logos",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "gitlab": {
+    "hex": "#FC6D26",
+    "source": "https://about.gitlab.com/press/press-kit/",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "postgresql": {
+    "hex": "#4169E1",
+    "source": "https://wiki.postgresql.org/wiki/Logo",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "mysql": {
+    "hex": "#4479A1",
+    "source": "https://www.mysql.com/about/legal/logos.html",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "supabase": {
+    "hex": "#3FCF8E",
+    "source": "https://github.com/supabase/supabase/blob/4031a7549f5d46da7bc79c01d56be4177dc7c114/packages/common/assets/images/supabase-logo-wordmark--light.svg",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "kotlin": {
+    "hex": "#7F52FF",
+    "source": "https://www.jetbrains.com/company/brand/logos/",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "jetpackcompose": {
+    "hex": "#4285F4",
+    "source": "https://developer.android.com/jetpack/compose/",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "streamlit": {
+    "hex": "#FF4B4B",
+    "source": "https://www.streamlit.io/brand",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  }
+}
