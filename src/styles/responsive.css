@@ -31,14 +31,8 @@
   .hero {
     margin-top: 35px;
   }
-  .hero h1 {
-    font-size: 110px;
-  }
   .hero-content {
     min-height: 700px;
-  }
-  .portrait-art {
-    height: 675px;
   }
 }
 
@@ -56,11 +50,6 @@
   }
   .hero h1 {
     font-size: 7.5vw;
-  }
-  .portrait-art {
-    height: 565px;
-    width: 133%;
-    margin-left: -22%;
   }
   .hero-buttons .button {
     padding: 13px 14px;
@@ -100,9 +89,6 @@
   .education-card h3 {
     font-size: 19px;
   }
-  .contact-section {
-    padding: 60px 35px;
-  }
   .nav-links {
     gap: 22px;
   }
@@ -128,15 +114,9 @@
   }
   .hero-content {
     min-height: 560px;
-    grid-template-columns: 57% 43%;
   }
   .hero h1 {
     font-size: 7.6vw;
-  }
-  .portrait-art {
-    height: 510px;
-    width: 145%;
-    margin-left: -32%;
   }
   .hero-description {
     font-size: 12px;
@@ -274,18 +254,9 @@
   .education-card>.small-label {
     font-size: 11px;
   }
-  .contact-row h2 {
-    font-size: 4rem;
-  }
   .contact-orbit {
     width: 120px;
     height: 120px;
-  }
-  .contact-links {
-    gap: 22px;
-  }
-  .contact-links>span {
-    margin-left: 0;
   }
 }
 
@@ -398,31 +369,6 @@
   }
   .hero-quote strong {
     font-size: 18px;
-  }
-  .portrait-art {
-    width: 100%;
-    height: 395px;
-    margin-left: 0;
-    align-self: stretch;
-    margin-top: 20px;
-  }
-  .portrait-fallback {
-    left: 5%;
-    max-width: 90%;
-  }
-  .fragment-tool {
-    width: 31px;
-    height: 31px;
-  }
-  .fragment-tool:nth-child(n+8) {
-    display: none;
-  }
-  .fragment-tool .tool-mark img {
-    width: 18px;
-    height: 18px;
-  }
-  .fragment-tool .tool-mark {
-    font-size: 11px;
   }
   .portrait-tag {
     font-size: 11px;
@@ -677,10 +623,6 @@
     font-size: 11px;
     margin-bottom: 17px;
   }
-  .company-logo {
-    width: 92px;
-    height: 34px;
-  }
   .timeline-content li {
     font-size: 11px;
     margin: 11px 0;
@@ -715,60 +657,28 @@
   .education-note {
     font-size: 11px;
   }
-  .contact-section {
-    margin: 0 0 30px;
-    padding: 40px 23px;
-  }
   .contact-row {
-    gap: 15px;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 24px;
   }
   .contact-row h2 {
     font-size: clamp(34px,9vw,52px);
   }
   .contact-orbit {
-    width: 45px;
-    height: 45px;
-    margin-top: 15px;
+    align-self: flex-end;
+    width: 80px;
+    height: 80px;
   }
   .contact-orbit::before {
-    inset: -6px;
+    inset: -8px;
   }
   .contact-orbit svg {
     width: 31px;
     height: 31px;
   }
-  .contact-row p {
-    font-size: 11px;
-    margin-top: 20px;
-  }
-  .contact-row .availability {
-    font-size: 11px;
-    margin-top: 20px;
-    max-width: 210px;
-  }
-  .contact-email {
-    gap: 10px;
-    margin: 30px 0 20px;
-  }
   .contact-email>a {
     font-size: clamp(16px,4.8vw,24px);
-    overflow-wrap: anywhere;
-    min-width: 0;
-  }
-  .contact-email .icon-button {
-    min-width: 34px;
-    min-height: 34px;
-  }
-  .contact-links {
-    gap: 15px 22px;
-  }
-  .contact-links a,.contact-links>span {
-    font-size: 11px;
-  }
-  .contact-links>span {
-    width: 100%;
-    margin-top: 8px;
   }
   .footer {
     padding-bottom: 28px;

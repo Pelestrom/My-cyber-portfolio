@@ -54,49 +54,74 @@
 
 .side-nav {
   position: fixed;
-  right: 15px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   z-index: 40;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 3px;
+  width: 40px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-elevated) 70%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 .side-nav a {
-  width: 16px;
-  height: 16px;
+  position: relative;
+  z-index: 0;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
   display: grid;
   place-items: center;
+  color: var(--text-muted);
+  transition: color 160ms ease;
 }
 
-.side-nav a::after {
-  content: "";
-  width: 4px;
-  height: 4px;
-  border: 1px solid var(--text-muted);
-  border-radius: 50%;
+.side-nav a:hover,.side-nav a:focus-visible,.side-nav a.active {
+  color: var(--accent);
 }
 
-.side-nav a.active::after {
-  background: var(--red);
-  border-color: var(--red);
-  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 56.5%, transparent);
+.side-nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
-.side-nav a span {
-  display: none;
+.side-nav-indicator {
   position: absolute;
-  right: 26px;
-  white-space: nowrap;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  pointer-events: none;
+}
+
+.side-nav-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translate(7px,-50%);
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg-elevated);
+  color: var(--text);
   font-family: var(--font-mono);
   font-size: 11px;
-  background: var(--bg);
-  padding: 4px 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease,transform 160ms ease;
 }
 
-.side-nav a:hover span,.side-nav a:focus-visible span {
-  display: block;
+.side-nav a:hover .side-nav-tooltip,.side-nav a:focus .side-nav-tooltip,.side-nav a.is-tooltip-open .side-nav-tooltip {
+  transform: translate(0,-50%);
+  opacity: 1;
 }
 
 .content-wrap {

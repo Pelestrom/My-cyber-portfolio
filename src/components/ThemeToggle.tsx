@@ -1,5 +1,21 @@
-import { Monitor, Moon, Sun } from 'lucide-react';
-import { useTheme, type ThemePreference } from '../lib/Theme';
+import type { MouseEvent } from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from '../lib/Theme';
 import { useLocale } from '../lib/Locale';
 import { refinement } from '../data/refinement';
-export function ThemeToggle(){const {preference,setPreference}=useTheme();const {lang}=useLocale();const text=refinement[lang];const Icon=preference==='system'?Monitor:preference==='dark'?Moon:Sun;return <details className="theme-control"><summary aria-label={`${text.theme}: ${text.themeOptions[preference]}`} title={text.theme}><Icon size={18}/></summary><div className="theme-menu" role="radiogroup" aria-label={text.theme}>{(['system','dark','light'] as ThemePreference[]).map(p=><button type="button" role="radio" aria-checked={p===preference} key={p} data-theme-option={p} onClick={e=>{setPreference(p,e.currentTarget);e.currentTarget.closest('details')?.removeAttribute('open');}}>{text.themeOptions[p]}<span aria-hidden="true">{p===preference?'●':'○'}</span></button>)}</div></details>;}
+import { useReducedMotion } from '../hooks/useReducedMotion';
+
+export function ThemeToggle(){
+ const {preference,setPreference}=useTheme();
+ const {lang}=useLocale();
+ const text=refinement[lang];
+ const reduced=useReducedMotion();
+ const next=preference==='dark'?'light':'dark';
+ const Icon=preference==='dark'?Sun:Moon;
+ function toggle(event:MouseEvent<HTMLButtonElement>){
+  if(!reduced)event.currentTarget.animate([{transform:'rotate(0deg)'},{transform:'rotate(1800deg)'}],{duration:1350,easing:'cubic-bezier(.22,1,.36,1)'});
+  setPreference(next);
+ }
+
+ return <button type="button" className="icon-button nav-cv theme-toggle-button" aria-label={`${text.theme}: ${text.themeOptions[next]}`} title={`${text.theme}: ${text.themeOptions[next]}`} onClick={toggle}><Icon size={18}/></button>;
+}

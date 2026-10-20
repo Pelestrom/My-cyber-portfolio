@@ -28,14 +28,21 @@
     "source": "https://raw.githubusercontent.com/WithSecureOpenSource/chainsaw/master/images/chainsaw.png",
     "repository": "https://github.com/WithSecureOpenSource/chainsaw",
     "license": "Artwork from upstream GPL-3.0 repository; see upstream LICENCE.",
-    "asset": "chainsaw.webp",
-    "modification": "Resized and converted to WebP only."
+    "asset": "chainsaw.svg",
+    "modification": "Recreated as monochrome vector artwork."
   },
   "onion": {
     "source": "https://avatars.githubusercontent.com/u/8959843?v=4",
     "repository": "https://github.com/Security-Onion-Solutions",
     "license": "Official Security Onion Solutions organization artwork; trademark ownership retained.",
-    "asset": "security-onion.webp",
-    "identity": "Official publisher identity (Security Onion Solutions)."
+    "asset": "security-onion.svg",
+    "identity": "Official publisher identity (Security Onion Solutions).",
+    "modification": "Recreated as monochrome vector artwork."
+  },
+  "windows": {
+    "source": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "repository": "https://www.microsoft.com/",
+    "license": "Microsoft trademark; nominative use only, no affiliation implied.",
+    "asset": "windows.svg"
   }
 }

@@ -239,6 +239,8 @@
 }
 
 .tabs button {
+  position: relative;
+  isolation: isolate;
   padding: 11px 17px;
   min-height: 44px;
   font-size: 11px;
@@ -247,28 +249,29 @@
   align-items: center;
   gap: 9px;
   border: 1px solid transparent;
-  transition: color .3s,background .3s,border-color .3s;
+  transition: color .18s ease;
 }
 
 .tabs button[aria-selected=true] {
   color: var(--text);
-  background: var(--surface);
-  border-color: var(--line-strong);
 }
 
 .tabs button:hover {
   color: var(--text);
 }
 
-.tab-dot {
-  width: 4px;
-  height: 4px;
-  border: 1px solid var(--text-muted);
+.tab-indicator {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  pointer-events: none;
 }
 
-.tabs button[aria-selected=true] .tab-dot {
-  border-color: var(--red);
-  background: var(--red);
+.tab-label {
+  position: relative;
 }
 
 .skill-number {
@@ -385,19 +388,6 @@
   color: var(--cert-color);
 }
 
-.company-logo {
-  width: 105px;
-  height: 38px;
-  background: var(--logo-plate);
-  padding: 7px;
-}
-
-.company-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .company-text {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -497,7 +487,7 @@
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
-  transition: width .2s,height .2s,background .2s;
+  transition: width var(--motion-base),height var(--motion-base),background var(--motion-base);
   mix-blend-mode: screen;
 }
 

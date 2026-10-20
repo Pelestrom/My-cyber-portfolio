@@ -94,5 +94,15 @@
     "hex": "#FF4B4B",
     "source": "https://www.streamlit.io/brand",
     "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "kalilinux": {
+    "hex": "#557C94",
+    "source": "https://www.kali.org/",
+    "license": "See Simple Icons CC0 and upstream brand policy"
+  },
+  "virustotal": {
+    "hex": "#394EFF",
+    "source": "https://www.virustotal.com/",
+    "license": "See Simple Icons CC0 and upstream brand policy"
   }
 }

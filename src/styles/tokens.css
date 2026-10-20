@@ -15,7 +15,7 @@
   --accent-2: #67d6ed;
   --on-accent: #080b12;
   --logo-mono: #edf1f7;
-  --logo-plate: #e3e8f0;
+  --logo-plate: #fff;
   --tool-plate: #172133;
   --glow: #ba3044;
   --scan: #67d6ed;
@@ -32,6 +32,11 @@
   --font-body: 'Instrument Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --ease: cubic-bezier(.22, 1, .36, 1);
+  --motion-fast: 120ms;
+  --motion-base: 220ms;
+  --motion-medium: 350ms;
+  --motion-reveal: 700ms;
+  --motion-stagger: 80ms;
 }
 
 :root[data-theme="light"] {
@@ -48,7 +53,7 @@
   --accent-2: #00667d;
   --on-accent: #ffffff;
   --logo-mono: #111b2b;
-  --logo-plate: #ffffff;
+  --logo-plate: #fff;
   --tool-plate: #ffffff;
   --glow: #cd6675;
   --scan: #00667d;
@@ -65,5 +70,4 @@
   --hero-line: #52627c;
   --hero-red: #ff5266;
   --hero-cyan: #67d6ed;
-  --brand-plate: #ffffff;
 }

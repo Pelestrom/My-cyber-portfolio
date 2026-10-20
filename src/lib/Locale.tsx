@@ -1,7 +1,9 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { i18n } from '../data/i18n';
 import { profile } from '../data/profile';
 import { site } from '../data/site';
+import { useReducedMotion } from '../hooks/useReducedMotion';
 import type { Lang } from '../types';
 const Context=createContext<{lang:Lang;toggle:()=>void;setLang:(lang:Lang)=>void}>({lang:'fr',toggle:()=>{},setLang:()=>{}});
 export function LocaleProvider({children}:{children:ReactNode}){
@@ -10,3 +12,4 @@ export function LocaleProvider({children}:{children:ReactNode}){
  return <Context.Provider value={{lang,toggle:()=>setLang(l=>l==='fr'?'en':'fr'),setLang}}>{children}</Context.Provider>;
 }
 export function useLocale(){const c=useContext(Context);return {...c,t:i18n[c.lang]};}
+export function LocaleFade({children,className}:{children:ReactNode;className?:string}){const {lang}=useLocale(),reduced=useReducedMotion();return <AnimatePresence initial={false} mode="wait"><motion.span key={lang} className={className} initial={reduced?false:{opacity:0}} animate={{opacity:1}} exit={reduced?{opacity:1}:{opacity:0}} transition={{duration:reduced?0:.18,ease:site.motion.ease}}>{children}</motion.span></AnimatePresence>;}

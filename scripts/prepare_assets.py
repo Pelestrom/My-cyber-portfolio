@@ -3,7 +3,7 @@ Requires Pillow, numpy, scipy, PyMuPDF. Source documents are unchanged."""
 from pathlib import Path
 import sys, shutil
 import numpy as np
-from scipy.ndimage import binary_propagation, gaussian_filter
+from scipy.ndimage import binary_propagation, distance_transform_edt, gaussian_filter
 from PIL import Image, ImageOps
 import pymupdf
 ROOT=Path(__file__).resolve().parents[1]
@@ -23,6 +23,30 @@ im=Image.fromarray(a);bbox=im.getbbox();im=im.crop(bbox);im.save(ASSETS/'portrai
 webp('ransomware (4)(1).png','ransomware.webp',(1200,1500))
 webp('ChatGPT Image 15 sept. 2026, 17_34_02(1).png','ransomware-secondary.webp')
 for source,target in [('HESTIM(2).png','hestim'),('2560px-Insa-hautsdefrance-logo(2).png','insa'),('logo_inp-5000-5000.webp','inp'),('1200px-Logo_bnetd_transparence.webp','bnetd'),('icon.webp','cwl')]:webp(source,'logos/'+target+'.webp',(500,500))
+
+def remove_connected_white(path):
+    """Remove near-white background connected to image edges, then crop losslessly."""
+    im=Image.open(path).convert('RGBA')
+    pixels=np.array(im)
+    rgb=pixels[:,:,:3].astype(np.int16)
+    near_white=(rgb.min(axis=2)>=232)&((rgb.max(axis=2)-rgb.min(axis=2))<=28)
+    seed=np.zeros(near_white.shape,bool)
+    seed[0]=near_white[0]; seed[-1]=near_white[-1]
+    seed[:,0]=near_white[:,0]; seed[:,-1]=near_white[:,-1]
+    background=binary_propagation(seed,mask=near_white)
+    # Soft alpha on the fill edge prevents a white fringe on dark themes.
+    alpha=255*(1-gaussian_filter(background.astype(float),0.65))
+    nearest=distance_transform_edt(background,return_distances=False,return_indices=True)
+    pixels[:,:,:3][background]=pixels[:,:,:3][nearest[0][background],nearest[1][background]]
+    pixels[:,:,3]=alpha.astype('uint8')
+    im=Image.fromarray(pixels,'RGBA')
+    bbox=im.getbbox()
+    if bbox: im=im.crop(bbox)
+    im.save(path,'WEBP',lossless=True,method=6)
+
+for logo in ('bnetd.webp','electrocenter.webp'):
+    path=ASSETS/'logos'/logo
+    if path.exists(): remove_connected_white(path)
 certs=[('Web RTA.pdf','web-rta'),('BTF.pdf','btf'),('C3SA.pdf','c3sa'),('Google Cybersecurity.pdf','google'),('EthicalHacker.pdf','cisco'),('Fortinet Certified Fundamentals in Cybersecurity.pdf','fortinet'),('CORE_Hackviser.pdf','core'),('Red Hat System Administration I (RH134 - RHA) - Ver. 10(1).pdf','redhat-i'),('Red Hat System Administration II (RH134 - RHA) - Ver. 10.pdf','redhat-ii'),('BD NoSQL.pdf','nosql'),('Cybercriminalité(1).pdf','cybercrime')]
 for source,slug in certs:
     d=pymupdf.open(SOURCE/source); pix=d[0].get_pixmap(matrix=pymupdf.Matrix(200/72,200/72),alpha=False)

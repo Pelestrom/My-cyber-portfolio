@@ -118,7 +118,8 @@
   width: 100%;
   height: 100%;
   inset: 0;
-  pointer-events: none;
+  pointer-events: auto;
+  z-index: 2;
   mask-image: linear-gradient(var(--shadow-ink) 82%,transparent 98%);
 }
 
@@ -142,16 +143,6 @@
   opacity: 0;
 }
 
-.portrait-scan {
-  position: absolute;
-  left: 10%;
-  right: 15%;
-  top: 43%;
-  height: 1px;
-  background: linear-gradient(90deg,transparent,color-mix(in srgb, var(--accent-2) 31.4%, transparent),transparent);
-  pointer-events: none;
-}
-
 .portrait-crosses {
   position: absolute;
   right: 8%;
@@ -173,45 +164,7 @@
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: .1em;
-  border-top: 1px solid color-mix(in srgb, var(--line-strong) 33.3%, transparent);
-  padding-top: 15px;
   color: var(--text);
-}
-
-.hero-tools {
-  position: absolute;
-  inset: 0;
-}
-
-.fragment-tool {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  border: 1px solid color-mix(in srgb, var(--text-muted) 22.0%, transparent);
-  background: color-mix(in srgb, var(--surface) 85.1%, transparent);
-  display: grid;
-  place-items: center;
-  animation: tool-drift 6s ease-in-out infinite;
-  box-shadow: 3px 2px 0 color-mix(in srgb, var(--accent) 7.8%, transparent);
-  z-index: 4;
-  transition: border-color .3s;
-}
-
-.fragment-tool:hover,.fragment-tool:focus-visible {
-  border-color: var(--red);
-  animation-play-state: paused;
-  z-index: 10;
-}
-
-.fragment-tool .tool-mark {
-  font-size: 11px;
-  width: 23px;
-  height: 23px;
-}
-
-.fragment-tool .tool-mark img {
-  width: 20px;
-  height: 20px;
 }
 
 .tool-tooltip {
@@ -228,10 +181,6 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s;
-}
-
-.fragment-tool:hover .tool-tooltip,.fragment-tool:focus-visible .tool-tooltip {
-  opacity: 1;
 }
 
 .hero-coordinate {
@@ -638,6 +587,26 @@
 
 .project-links a:hover {
   color: var(--red);
+}
+
+.project-links a.project-link-primary {
+  padding: 11px 15px;
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  background: var(--red);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.project-links a.project-link-primary:hover {
+  color: var(--bg);
+  filter: brightness(1.08);
+}
+
+.project-links a.project-link-secondary {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
 }
 
 .visual-ransomware {
@@ -1187,105 +1156,6 @@
   margin-top: 17px;
   width: 100%;
   color: var(--text);
-}
-
-.contact-section {
-  padding: 75px 50px;
-  margin: 10px 0 55px;
-  border: 1px solid var(--line-strong) !important;
-  background: radial-gradient(ellipse at 95% 20%,color-mix(in srgb, var(--line-strong) 10.2%, transparent),transparent 60%),var(--surface);
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.contact-row h2 {
-  font-size: clamp(3.2rem,6vw,5.2rem);
-}
-
-.contact-row p {
-  font-size: 13px;
-  margin-top: 23px;
-  max-width: 370px;
-}
-
-.contact-row .availability {
-  margin-top: 25px;
-}
-
-.contact-orbit {
-  width: 145px;
-  height: 145px;
-  border: 1px solid var(--line-strong);
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  position: relative;
-  color: var(--red);
-  transition: background .3s,transform .5s;
-  flex-shrink: 0;
-}
-
-.contact-orbit::before {
-  content: "";
-  position: absolute;
-  inset: -12px;
-  border: 1px dashed var(--line-strong);
-  border-radius: 50%;
-}
-
-.contact-orbit:hover {
-  background: color-mix(in srgb, var(--accent) 8.2%, transparent);
-  transform: rotate(8deg);
-}
-
-.contact-orbit svg {
-  stroke-width: 1;
-}
-
-.contact-email {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  margin: 42px 0 29px;
-  padding-bottom: 26px;
-  border-bottom: 1px solid var(--line);
-}
-
-.contact-email>a {
-  font-family: var(--font-heading);
-  font-size: clamp(1.35rem,3vw,2rem);
-  letter-spacing: -.025em;
-}
-
-.contact-email>a:hover {
-  color: var(--red);
-}
-
-.contact-links {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.contact-links a,.contact-links>span {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  color: var(--text);
-}
-
-.contact-links a:hover {
-  color: var(--red);
-}
-
-.contact-links>span {
-  margin-left: auto;
 }
 
 .project-detail,.certificate-grid {
