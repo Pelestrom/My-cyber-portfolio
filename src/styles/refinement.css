@@ -1227,7 +1227,7 @@ h4 {
     font-size: 14px;
   }
   .contact-row h2 {
-    font-size: clamp(33px,9vw,48px);
+    font-size: clamp(26px,8.2vw,34px);
   }
   .contact-row p {
     font-size: 15px;
@@ -1236,15 +1236,33 @@ h4 {
     font-size: 11px;
   }
   .contact-email>a {
-    font-size: clamp(17px,4.5vw,23px);
+    font-size: clamp(14px,3.8vw,16px);
+  }
+  .contact-email {
+    gap: 8px;
   }
   .contact-links a {
     font-size: 12px;
   }
-  .terminal-interactive .terminal-header {
-    font-size: 12px;
-    flex-wrap: wrap;
+  .contact-links {
+    grid-template-columns: minmax(0,1fr);
     gap: 8px;
+  }
+  .contact-orbit {
+    width: 56px;
+    height: 56px;
+    align-self: flex-end;
+  }
+  .contact-orbit svg {
+    width: 24px;
+    height: 24px;
+  }
+  .terminal-interactive .terminal-header {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    font-size: 12px;
+    align-items: start;
+    gap: 6px;
     padding: 12px 14px;
   }
   .terminal-interactive .terminal-header > span {

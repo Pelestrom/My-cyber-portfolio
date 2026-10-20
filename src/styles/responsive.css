@@ -666,13 +666,18 @@
     font-size: clamp(34px,9vw,52px);
   }
   .contact-orbit {
-    display: none;
+    width: 56px;
+    height: 56px;
+    align-self: flex-end;
+  }
+  .contact-orbit svg {
+    width: 24px;
+    height: 24px;
   }
   .contact-email { margin: 24px 0 20px; }
   .contact-email>a {
     font-size: clamp(16px,4.8vw,24px);
   }
-  .contact-links { grid-template-columns: 1fr; gap: 8px; }
   .footer {
     padding-bottom: 28px;
     gap: 15px;
