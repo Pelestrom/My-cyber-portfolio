@@ -9,7 +9,7 @@ export function AnalystModeToggle(){
   else delete document.documentElement.dataset.analystMode;
   return()=>{delete document.documentElement.dataset.analystMode;};
  },[active]);
- return <button className="analyst-mode-toggle" type="button" aria-pressed={active} onClick={()=>setActive(value=>!value)}>
-  <ScanEye size={16} aria-hidden="true"/><span>{active?t.analystModeActive:t.analystMode}</span><kbd>HUD</kbd>
+ return <button className="analyst-mode-toggle" type="button" aria-pressed={active} title={active?t.analystModeActive:t.analystMode} onClick={()=>setActive(value=>!value)}>
+  <ScanEye size={16} aria-hidden="true"/><span>{t.analystMode}</span>
  </button>;
 }

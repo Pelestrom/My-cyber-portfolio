@@ -747,7 +747,7 @@ h4 {
 
 .contact-section {
   margin: 10px 0 55px;
-  padding: clamp(32px,5vw,64px);
+  padding: 30px;
   border: 1px solid var(--line) !important;
   border-radius: 18px;
   background: var(--bg-elevated);
@@ -1070,6 +1070,9 @@ h4 {
   .section {
     padding: 70px 0;
   }
+  .contact-section {
+    padding: 24px;
+  }
   .section-heading-row h2 {
     font-size: clamp(32px,9.5vw,48px);
   }
@@ -1243,6 +1246,11 @@ h4 {
     flex-wrap: wrap;
     gap: 8px;
     padding: 12px 14px;
+  }
+  .terminal-interactive .terminal-header > span {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
   .terminal-console {
     padding: 14px;

@@ -87,8 +87,7 @@
   font-size: 11px;
   box-shadow: 0 8px 24px color-mix(in srgb, var(--shadow-ink) 18%, transparent);
 }
-.analyst-mode-toggle[aria-pressed='true'] { border-color: var(--accent-2); color: var(--accent-2); }
-.analyst-mode-toggle kbd { padding: 2px 5px; border: 1px solid var(--line); border-radius: 4px; font: 9px var(--font-mono); }
+.analyst-mode-toggle[aria-pressed='true'] { border-color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 10%, var(--bg-elevated)); color: var(--accent-2); }
 #root::after { content: ''; display: none; position: fixed; z-index: 140; inset: 12px; pointer-events: none; border: 1px solid color-mix(in srgb, var(--accent-2) 28%, transparent); }
 #root::before { content: ''; display: none; position: fixed; z-index: 145; top: 0; left: 0; right: 0; height: 2px; pointer-events: none; background: linear-gradient(90deg, transparent, var(--scan) 12%, var(--scan) 88%, transparent); box-shadow: 0 0 10px var(--scan); animation: analyst-scan-line 2s ease-in-out 1 both; }
 :root[data-analyst-mode='true'] #root::after { display: block; }
@@ -108,8 +107,8 @@ body,.navigation,.side-nav,.project-card,.terminal,.certificate-card,.school-car
 .certifications-page { animation: page-arrive var(--motion-medium) var(--ease) both; }
 @keyframes page-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 680px) {
-  .analyst-mode-toggle { left: 12px; bottom: 12px; width: 40px; min-height: 38px; padding: 0; justify-content: center; }
-  .analyst-mode-toggle span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .analyst-mode-toggle { left: 12px; bottom: 12px; width: auto; min-width: 0; min-height: 42px; padding: 0 13px; justify-content: center; gap: 8px; }
+  .analyst-mode-toggle span { position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: nowrap; font-size: 11px; }
   #root::after { inset: 7px; }
 }
 @media (prefers-reduced-motion: reduce) {
