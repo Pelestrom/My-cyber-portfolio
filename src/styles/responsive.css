@@ -667,15 +667,15 @@
   }
   .contact-orbit {
     align-self: flex-end;
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
   }
   .contact-orbit::before {
     inset: -8px;
   }
   .contact-orbit svg {
-    width: 31px;
-    height: 31px;
+    width: 24px;
+    height: 24px;
   }
   .contact-email>a {
     font-size: clamp(16px,4.8vw,24px);

@@ -926,7 +926,7 @@ h4 {
   .navigation {
     padding: 0 25px;
   }
-  .nav-cv {
+  .nav-cv:not(.theme-toggle-button) {
     display: none;
   }
   .hero-description {
@@ -1242,6 +1242,19 @@ h4 {
     font-size: 12px;
     flex-wrap: wrap;
     gap: 8px;
+    padding: 12px 14px;
+  }
+  .terminal-console {
+    padding: 14px;
+  }
+  .terminal-command-form {
+    min-width: 0;
+    gap: 7px;
+  }
+  .terminal-command-form input {
+    min-width: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
   .terminal-history code {
     font-size: 11px;
